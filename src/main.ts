@@ -5,6 +5,7 @@ import QRCode from 'qrcode'
 const qrInput = document.querySelector<HTMLInputElement>('.qr-input')!
 const generateBtn = document.querySelector<HTMLButtonElement>('.generate-btn')!
 const qrImage = document.querySelector<HTMLImageElement>('.qr-image img')!
+const downloadBtn = document.querySelector<HTMLButtonElement>('.download-btn')!
 
 // Verifica se os elementos foram encontrados
 let data:string = qrInput.value
@@ -32,6 +33,18 @@ function generateQrCode(data: string) {
         .then(url => {
             qrImage.src = url
             qrImage.alt = sanitizedString
+
+            // Exibe o botão de download
+            downloadBtn.style.display = 'block'
+
+            // Define o evento de clique para o botão de download
+            downloadBtn.onclick = () => {
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${sanitizedString}.png`;
+                a.click();
+            };
+
             console.log('QR Code URL:', url)
             console.log('Sanitized String:', sanitizedString)
             console.log('QR Code gerado com sucesso!')
