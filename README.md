@@ -2,6 +2,8 @@
 
 Um aplicativo web simples para gerar códigos QR a partir de texto ou URLs, desenvolvido com tecnologias modernas para uma experiência rápida e responsiva.
 
+[Link versão online](https://gerador-qr-code-wheat.vercel.app)
+
 ## 🚀 Tecnologias Utilizadas
 
 - **Vite**: Ferramenta de build rápida e moderna para desenvolvimento web.
